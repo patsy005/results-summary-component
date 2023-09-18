@@ -1,0 +1,238 @@
+@use '../abstracts';
+@use '../base';
+
+p {
+	font-size: 1.6rem;
+}
+
+.component {
+	display: flex;
+	flex-direction: column;
+	gap: 2.4rem;
+	background-color: abstracts.$white;
+
+	&__result,
+	&__summary {
+		padding: 2rem;
+	}
+
+	h4 {
+		font-size: 1.8rem;
+		font-weight: 700;
+	}
+
+    span {
+        opacity: 0.5;
+    }
+
+	&__result {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2.4rem;
+		border-bottom-left-radius: 32px;
+		border-bottom-right-radius: 32px;
+		background: abstracts.$gradient1;
+		color: abstracts.$white;
+		box-shadow: 0px 30px 60px 0px rgba(abstracts.$dark-gray-blue, 0.15);
+
+		h4,
+		.score-of {
+			color: abstracts.$light-lavender;
+		}
+
+		&-circle {
+			width: 14rem;
+			height: 14rem;
+			border-radius: 50%;
+			background: abstracts.$gradient2;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5rem;
+
+			.score {
+				font-size: 5.8rem;
+				font-weight: 800;
+			}
+
+			.score-of {
+				font-weight: 500;
+				font-size: 1.6rem;
+			}
+		}
+
+		&-text {
+			h3,
+			.score-info {
+				text-align: center;
+			}
+			h3 {
+				font-size: 2.4rem;
+				font-weight: 700;
+				margin-bottom: 0.8rem;
+			}
+
+			.score-info {
+				color: abstracts.$light-lavender;
+				font-size: 1.6rem;
+				font-weight: 500;
+			}
+		}
+	}
+
+	&__summary {
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+
+		&-box {
+			padding: 1.7rem;
+			border-radius: 12px;
+			// background: linear-gradient(0deg, rgba(abstracts.$white, 0.95) 0%, rgba(abstracts.$white, 0.95) 100%), abstracts.$light-red;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			&:nth-of-type(1) {
+				background: linear-gradient(0deg, rgba(abstracts.$white, 0.95) 0%, rgba(abstracts.$white, 0.95) 100%),
+					abstracts.$light-red;
+
+				.skill {
+					p {
+						color: abstracts.$light-red;
+					}
+				}
+			}
+
+			&:nth-of-type(2) {
+				background: linear-gradient(0deg, rgba(abstracts.$white, 0.95) 0%, rgba(abstracts.$white, 0.95) 100%),
+					abstracts.$orangey-yellow;
+
+				.skill {
+					p {
+						color: abstracts.$orangey-yellow;
+					}
+				}
+			}
+
+			&:nth-of-type(3) {
+				background: linear-gradient(0deg, rgba(abstracts.$white, 0.95) 0%, rgba(abstracts.$white, 0.95) 100%),
+					abstracts.$green-teal;
+
+				.skill {
+					p {
+						color: abstracts.$green-teal;
+					}
+				}
+			}
+
+			&:nth-of-type(4) {
+				background: linear-gradient(0deg, rgba(abstracts.$white, 0.95) 0%, rgba(abstracts.$white, 0.95) 100%),
+					abstracts.$cobalt-blue;
+
+				.skill {
+					p {
+						color: abstracts.$cobalt-blue;
+					}
+				}
+			}
+
+			.skill {
+				display: flex;
+				align-items: center;
+				gap: 1.2rem;
+
+				p {
+					font-weight: 700;
+				}
+			}
+		}
+		.btn {
+			border-radius: 128px;
+			border: none;
+			padding: 1.6rem 0;
+			background: abstracts.$dark-gray-blue;
+			color: abstracts.$white;
+			font-family: inherit;
+			font-weight: 700;
+			font-size: 1.8rem;
+			cursor: pointer;
+			transition: background 0.3s;
+
+			&:hover {
+				background: abstracts.$gradient1;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	p {
+		font-size: 1.8rem;
+	}
+	.component {
+		flex-direction: row;
+		border-radius: 32px;
+        box-shadow: 0px 30px 60px 0px rgba(61, 108, 236, 0.15);
+
+		&__result {
+			padding: 5.4rem;
+		}
+		&__summary {
+			padding: 4rem;
+		}
+
+		h4 {
+			font-size: 2.4rem;
+		}
+
+		&__result {
+			justify-content: space-between;
+			align-items: center;
+			gap: 2.4rem;
+			border-radius: 32px;
+            flex: 1;
+
+			h4,
+			.score-of {
+				color: abstracts.$light-lavender;
+			}
+
+			&-circle {
+				gap: 0.7rem;
+
+				.score {
+					font-size: 7.2rem;
+				}
+
+				.score-of {
+					font-size: 1.8rem;
+				}
+			}
+
+			&-text {
+				h3 {
+					font-size: 3.2rem;
+					margin-bottom: 1.4rem;
+				}
+
+				.score-info {
+					font-size: 1.8rem;
+				}
+			}
+		}
+
+		&__summary {
+            flex: 1;
+			gap: 2.8rem;
+
+			&-box {
+				padding: 1.8rem;
+				gap: 8rem;
+			}
+		}
+	}
+}
